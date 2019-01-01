@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+    function subst() {
+      var vars = {};
+      var x = document.location.search.substring(1).split('&');
+      for (var i in x) {
+        var z = x[i].split('=',2);
+        vars[z[0]] = decodeURI(z[1]);
+      }
+      var x = [
+        'section','subsection','subsubsection'
+      ];
+      for (var i in x) {
+        var y = document.getElementsByClassName(x[i]);
+        for (var j = 0; j < y.length; ++j) {
+          y[j].textContent = vars[x[i]];
+        }
+      }
+    }
+    </script>
+    <style>
+      body { width: 100%; padding:0; margin:0; border:0; }
+      div { padding-bottom: 5mm; }
+      table { border-bottom: 1px dashed black; width: 100% }
+      td { padding-bottom: 2mm; }
+      td.subsection-cell { text-align: right; }
+    </style>
+  </head>
+  <body onload="subst()">
+    <div>
+      <table>
+        <tr>
+          <td class="section-cell">
+            <span class="section"></span>
+          </td>
+          <td class="subsection-cell">
+            <span class="subsection"></span>
+          </td>
+        </tr>
+      </table>
+    </div>  
+  </body>
+</html>

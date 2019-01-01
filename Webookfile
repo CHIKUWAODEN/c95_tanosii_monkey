@@ -1,0 +1,31 @@
+{
+  "version"    : "0.1",
+  "title"      : "c95_monkey_plusplus",
+  "summary"    : "c95_monkey_plusplus",
+  "stylesheet" : "src/stylesheet.css",
+  "source"     : [
+    "src/pre.md",
+    "src/1_intro.md",
+    "src/2_lexer.md",
+    "src/3_parse.md",
+    "src/4_eval.md",
+    "src/pos.md"
+  ],
+  "option" : [
+    "-g",
+    "--page-size B5",
+    "--page-offset 0",
+    "--margin-left 20mm",
+    "--margin-right 20mm",
+    "--margin-bottom 25mm",
+    "--margin-top 25mm",
+    "--outline",
+    "--encoding UTF-8"
+  ],
+  "template" : "template/default.erb",
+  "header"   : "template/header.html",
+  "footer"   : "template/footer.html",
+  "helper"   : "template/erb_helper.rb",
+  "out_dir"  : "output",
+  "tmp_dir"  : "tmp"
+}
